@@ -1,0 +1,34 @@
+name: Deploy to IPFS via Fleek
+
+on:
+  push:
+    branches:
+      - main  # Change to your branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Adjust Node.js version as per your app's requirements
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build React app
+        run: |
+          npm run build
+
+      - name: Deploy to Fleek
+        run: |
+          npm install -g fleek-cli
+          fleek login --api-key ${{ secrets.FLEEK_API_KEY }}
+          fleek deploy
+

@@ -6,8 +6,7 @@ const App = () => {
       
      <h1> React IPFS App</h1>
      <h1> New Update </h1>
-     <h1> React IPFS App</h1>
-     <h1> New Update </h1>
+
     
     </>
   )
