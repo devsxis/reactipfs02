@@ -2,7 +2,12 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div>React IPFS App </div>
+    <>
+      
+     <h1> React IPFS App</h1>
+     <h1> New Update </h1>
+    
+    </>
   )
 }
 
